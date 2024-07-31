@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Sales Graphs</title>
+    <link rel="stylesheet" href="css/graph.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="flex">
+        <h1>Real-Time Sales Graphs</h1>
+        <div class="buttons">
+            <button><a href="index.html">Menu</a></button>
+            <button><a href="customersdata.html">customers data</a></button>
+        </div>
+    </div>
+    <div class="filter-buttons">
+        <button id="dailyBtn" onclick="filterData('daily')">Today</button>
+        <button id="monthlyBtn" onclick="filterData('monthly')">This Month</button>
+        <button id="yearlyBtn" onclick="filterData('yearly')">This Year</button>
+    </div>
+    <div id="totalSales">Total Sales: AED 0</div>
+    <div id="currentFilter">Showing data for: Today</div>
+    <div>
+        <canvas id="salesChart"></canvas>
+    </div>
+    <script src="JS/graph.js"></script>
+</body>
+</html>

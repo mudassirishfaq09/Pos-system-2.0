@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Records</title>
+    <link rel="stylesheet" href="css/customer.css">
+
+</head>
+<body>
+    <div class="flex">
+        <h1>Invoice Records</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="realTimeGraphs.html">Real time sales graph </a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="filter-buttons">
+        <button id="todayBtn" onclick="showDailyData()">Today</button>
+        <button id="monthlyBtn" onclick="showMonthlyFilters()">Monthly</button>
+        <button id="yearlyBtn" onclick="showYearlyData()">Yearly</button>
+    </div>
+
+    <div class="filter-heading" id="filterHeading">
+        Select a filter to view data
+    </div>
+
+    <div class="total-sales" id="totalSalesWithVAT">
+        Grand Total Sales (with VAT): 0 AED
+    </div>
+    <div class="total-sales" id="totalVAT">
+        Total VAT: 0 AED
+    </div>
+
+    <div id="monthlyFilters" class="date-filter" style="display: none;">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date">
+        <button onclick="filterMonthlyData()">Filter</button>
+    </div>
+
+    <div id="yearlyFilters" class="date-filter" style="display: none;">
+        <label for="yearSelect">Select Year:</label>
+        <select id="yearSelect" onchange="filterYearlyData()"></select>
+    </div>
+
+    <div id="yearlyData" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Total Items Bought</th>
+                    <th>Total VAT (5%)</th>
+                    <th>Total Sales (including VAT)</th>
+                </tr>
+            </thead>
+            <tbody id="yearlyTable">
+            </tbody>
+        </table>
+    </div>
+
+    <table id="invoiceRecordsTable">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Quantity</th>
+                <th>VAT (5%)</th>
+                <th>Total Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="invoiceRecords">
+        </tbody>
+    </table>
+
+   <script src="JS/customer.js"></script>
+</body>
+</html>
